@@ -1,5 +1,7 @@
 # `tokio_unstable` Example
 
+> This is a minimal example for the issue [tokio-rs/tokio#7254][issue].
+
 The [`tokio`][tokio] crate uses a combination of a Cargo feature flag (`testing`) and a bare `--cfg`
 flag (`tokio_unstable`) to conditionally compile some code. Users of the crate must enable both
 flags in order to use (for example) `tokio::task::Builder` - but bare `--cfg` flags, unlike Cargo
@@ -38,5 +40,6 @@ build --target <target-triple>`, where `<target-triple>` can be any supported ta
 because the copy of `task-spawner` that's a _build dependency_ of `main-crate` will now be compiled
 without `--cfg tokio_unstable`.
 
-[tokio]: https://github.com/tokio-rs/tokio
+[issue]: https://github.com/tokio-rs/tokio/issues/7254
 [rustflags]: https://doc.rust-lang.org/cargo/reference/config.html#buildrustflags
+[tokio]: https://github.com/tokio-rs/tokio
